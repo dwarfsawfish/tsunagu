@@ -7,6 +7,8 @@
 | encrypted_password | string     | null: false |
 | first_name         | string     | null: false |
 | last_name          | string     | null: false |
+| admin              | boolean    |             |
+
 
 ### Association
 - has_many :offers
