@@ -17,7 +17,7 @@
             <div class= "target3">管理者用</div>
             <div class= "buttons">
               <%= link_to '記事を投稿する', new_admin_article_path, class: "admin_article_button" %>
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout_button" %>
+              <%= link_to 'ログアウト', destroy_user_session_path, class: "logout_button", method: :delete %>
             </div>
           </div>
 

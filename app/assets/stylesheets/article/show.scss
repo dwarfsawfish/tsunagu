@@ -10,7 +10,7 @@ big {
   box-shadow: 0px 0px 0px 5px #bfd3d6;
   border: dashed 2px white;
   padding: 0.2em 0.5em;
-  color: #454545;
+  color: #005497;
 }
 
 big:after {
@@ -27,4 +27,23 @@ big:after {
 .article_content{
   margin-top: 30px;
   font-size: 22px;
+}
+
+.admin_only_button{
+  margin-top: 100px;
+  margin-left: 50px;
+}
+
+a{
+  text-decoration: none;
+  color: beige;
+}
+
+
+.edit_button, .delete_button{
+  border: 1px solid #005497;
+  border-radius: 5px;
+  padding: 8px;
+  margin-left: 8px;
+  background-color: #005497;
 }

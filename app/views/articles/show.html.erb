@@ -66,6 +66,13 @@
           <%= @article.content %>
         </div>
       </div>
+
+      <% if user_signed_in? && current_user.admin? %>
+        <div class="admin_only_button">
+          <%= link_to '編集する', edit_admin_article_path(@article.id), class: "edit_button" %>
+          <%= link_to '削除する', admin_article_path(@article.id), method: :delete, class: "delete_button" %>
+        </div>
+      <% end %>
     </div>
 
     <!-- フッター -->

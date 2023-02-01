@@ -15,9 +15,15 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
+    @article.update(article_params)
   end
 
   def destroy
+    @article = Article.find(params[:id])
+    if @article.destroy
+      redirect_to root_path
+    end
   end
 
 
