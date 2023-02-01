@@ -1,5 +1,6 @@
 class Admin::ArticlesController < ApplicationController
   before_action :if_not_admin
+  before_action :find_article
 
   def new
     @article = Article.new
@@ -15,12 +16,10 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
     @article.update(article_params)
   end
 
   def destroy
-    @article = Article.find(params[:id])
     if @article.destroy
       redirect_to root_path
     end
@@ -34,5 +33,9 @@ class Admin::ArticlesController < ApplicationController
 
   def article_params
     params.permit(:title, :content, :sorting_id).merge(user_id: current_user.id)
+  end
+
+  def find_article
+    @article = Article.find(params[:id])
   end
 end
