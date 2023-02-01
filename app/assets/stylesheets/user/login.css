@@ -9,8 +9,10 @@
 .logo{
   color: #005497;
   margin: auto;
+  text-decoration-line: none;
+  font-weight: 200;
+  font-size: 40px;
 }
-
 
 .form_box{
   height: 70%;
@@ -20,7 +22,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #efe2dd;
+  background-color: beige;
 }
 
 .login_title{

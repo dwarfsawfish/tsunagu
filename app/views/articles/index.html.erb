@@ -7,63 +7,92 @@
   <body>
     <!-- ヘッダー -->
     <header class="header">
-      <div class= "left_header">
-        <a href="#">TSUNAGU</a>
-      </div>
+      <div class= "left_header">TSUNAGU</div>
 
-      <% if user_signed_in? %>
-        <div class= "right_header">
+      <div class= "right_header">
+
+
+        <% if user_signed_in? && current_user.admin? %>
+          <div class= "right2">
+            <div class= "target3">管理者用</div>
+            <div class= "buttons">
+              <%= link_to '記事を投稿する', new_admin_article_path, class: "admin_article_button" %>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout_button" %>
+            </div>
+          </div>
+
+        <% elsif user_signed_in? %>
           <div class= "right1">
             <div class="target1">求職者の方はこちら</div>
             <div class= "buttons">
-              <a href= "new_user_registration_path, class= "register_button">新規登録</a>
-              <a href= "#" class= "login_button">ログイン</a>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout_button" %>
             </div>
           </div>
           <div class= "right2">
             <div class= "target2">企業の方はこちら</div>
             <div class= "buttons">
-              <a href= "#" class= "register_button">新規登録</a>
-              <a href= "#" class= "login_button">ログイン</a>
+              <%= link_to 'ログアウト', destroy_company_session_path, method: :delete, class: "logout_button" %>
             </div>
           </div>
-        </div>
-      <% else %>
-        <div class= "right_header">
+
+        <% else %>
           <div class= "right1">
-            <div class="target1">求職者の方はこちら</div>
+            <div class= "target1">求職者の方はこちら</div>
             <div class= "buttons">
-              <a href= "#" class= "register_button">新規登録</a>
-              <a href= "#" class= "login_button">ログイン</a>
+              <%= link_to '新規登録', new_user_registration_path, class: "register_button" %>
+              <%= link_to 'ログイン', new_user_session_path, class: "login_button" %>
             </div>
           </div>
           <div class= "right2">
             <div class= "target2">企業の方はこちら</div>
             <div class= "buttons">
-              <a href= "#" class= "register_button">新規登録</a>
-              <a href= "#" class= "login_button">ログイン</a>
+              <%= link_to '新規登録', new_company_registration_path, class: "register_button" %>
+              <%= link_to 'ログイン', new_company_session_path, class: "login_button" %>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </header>
 
     <!-- トップページのメイン -->
     <div class="index_main">
       <div class= "main_message">
-        <img src="../../images/top.jpg" alt="サンプル画像です" class= "top_image">
-          <div class= "top_message">
-            <p>近年、日本では一度罪を犯した人が再び罪を犯してしまう「再犯率」が上昇傾向にあります。<br>
-            要因の一つとして、「仕事が見つからない」という課題があります。<br>
-            当サイトでは、仕事探しが難しい方向けに、情報提供をしていきます。</p>
-          </div>
+        <img src="assets/top.jpg" alt="サンプル画像です" class= "top_image">
+        <div class= "main_text">
+          <p>メインメッセージ部分。<br>
+          あとで入れる。
+          </p>
+        </div>
       </div>
       <div class= "article_box">
         <div class= "user_articles">
           <p>お仕事探しに役立つ記事はこちら</p>
+            <ul>
+              <% @articles.each do |article| %>
+                <% if article.sorting_id == 2 %>
+                <li class='list'>
+                  <h3 class='article_title'>
+                    <%= link_to "#{ article.title }", article_path(article.id) %>
+                  </h3>                
+                <% end %>
+                </li>
+              <% end %>
+            </ul>
         </div>
+
         <div class= "company_articles">
           <p>更生支援に興味のある企業様に役立つ記事はこちら</p>
+            <ul>
+              <% @articles.each do |article| %>
+                <% if article.sorting_id == 3 %>
+                <li class='list'>
+                  <h3 class='article_title'>
+                    <%= link_to "#{ article.title }", article_path(article.id) %>
+                  </h3>                
+                <% end %>
+                </li>
+              <% end %>
+            </ul>
         </div>
       </div>
       <div class= "action_buttons">
@@ -77,7 +106,7 @@
       <div class= "contact">CONTACT US
         <div class= "contact_message">お問い合わせはこちらから</div>
         <div class= "tel">Tel : 0000-00-0000</div>
-        <a href= "#" class= "toppage_button">TOPへ戻る</a>
+        <%= link_to 'TOPへ戻る', articles_path, class: "toppage_button" %>
       </div>
     </footer>
   </body>

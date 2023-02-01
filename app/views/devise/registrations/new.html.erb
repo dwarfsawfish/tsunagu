@@ -1,10 +1,10 @@
 <div class= "registration_wrapper">
-  <h1 class= "logo">TSUNAGU</h1>
+  <%= link_to 'TSUNAGU', articles_path, class: "logo" %>
 
   <div class= "form_box">
     <h2 class= "registration_title">新規登録</h2>
 
-    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %> 
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %> 
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
@@ -13,9 +13,13 @@
       </div>
 
       <div class="field">
-        <%= f.label :お名前 %><br />
-        <%= f.text_field :last_name, class: "last_name_field", placeholder:"例) 山田", autofocus: true %><br />
-        <%= f.text_field :nickname, placeholder:"例) 太郎", autofocus: true %>
+        <%= f.label :姓 %><br />
+        <%= f.text_field :last_name, placeholder:"例) 山田", autofocus: true %><br />
+      </div>
+
+      <div class="field">
+        <%= f.label :名 %><br />
+        <%= f.text_field :first_name, placeholder:"例) 太郎", autofocus: true %><br />
       </div>
 
       <div class="field">

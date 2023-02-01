@@ -1,0 +1,22 @@
+.article_post{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article_forms{
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  margin-bottom: 20px;
+}
+
+.content{
+  margin-bottom: 20px;
+}
+
+.post_button{
+  margin-left: 180px;
+}

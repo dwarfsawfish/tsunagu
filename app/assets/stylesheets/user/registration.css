@@ -6,17 +6,21 @@
   background-color: #bfd3d6;
 }
 
+
 .logo{
   color: #005497;
   margin: auto;
+  text-decoration-line: none;
+  font-weight: 200;
+  font-size: 40px;
 }
 
 
 .form_box{
-  height: 70%;
+  height: 80%;
   width: 60%;
   margin: auto;
-  background-color: #efe2dd;
+  background-color: beige;
 }
 
 .registration_title{
@@ -30,10 +34,6 @@
 }
 
 .field{
-  margin-bottom: 20px;
-}
-
-.last_name_field{
   margin-bottom: 20px;
 }
 

@@ -15,13 +15,8 @@
   font-weight: 400;
   display: flex;
   align-items: center;
-  margin-left: 20px;
-}
-
-.left_header a{
+  margin-left: 30px;
   color: #005497;
-  text-decoration-line: none;
-  font-weight: 300;
 }
 
 .right_header{
@@ -37,6 +32,7 @@
 
 .target1, .target2{
   margin: 10px 0 10px 20px;
+  color: #005497;
 }
 
 .buttons{
@@ -69,6 +65,27 @@
   background-color: #005497;
 }
 
+.logout_button{
+  border: 1px solid #005497;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #005497;
+}
+
+////管理者用の記事投稿ボタン////
+
+.target3{
+  margin-top: 15px;
+}
+
+.admin_article_button{
+  border: 1px solid #005497;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #005497;
+  margin-right: 20px;
+}
+
 //////////////////////////////メイン部分の装飾///////////////////////////////////////////
 .index_main{
   height: calc(100vh - 100px - 120px);
@@ -77,17 +94,29 @@
   background-color: beige;
 }
 
-.top_image{
-  height: calc(100vh - 100px - 120px);
-  width: 100vw;
-}
-
 
 .main_message{
   height: 400px;
   background-color: lightgoldenrodyellow;
   margin-bottom: 100px;
+  position: relative;
 }
+
+.top_image{
+  height: 400px;
+  width: 100vw;
+  opacity: 30%;
+}
+
+
+.main_text{
+position: absolute;
+top: 50px;
+left: 50px;
+}
+
+
+////管理者の投稿記事の表示部分////
 
 .article_box{
   overflow: auto;
@@ -99,8 +128,15 @@
   justify-content: space-between;
 }
 
+.article_box a{
+  text-decoration-line: none;
+  color: black;
+}
+
 .user_articles{
   width: 48%;
+  overflow: scroll;
+  border-radius: 8px;
   background-color: #bfd3d678;
 }
 
@@ -111,7 +147,9 @@
 
 .company_articles{
   width: 48%;
-  background-color: #bfd3d677;
+  overflow: scroll;
+  border-radius: 8px;
+  background-color: #bfd3d678;
 }
 
 .action_buttons a{
