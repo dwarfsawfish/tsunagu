@@ -1,0 +1,52 @@
+.registration_wrapper{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #bfd3d6;
+}
+
+
+.logo{
+  color: #005497;
+  margin: auto;
+  text-decoration-line: none;
+  font-weight: 200;
+  font-size: 40px;
+}
+
+
+.form_box{
+  height: 80%;
+  width: 60%;
+  margin: auto;
+  background-color: beige;
+}
+
+.registration_title{
+  margin-bottom: 50px;
+}
+
+.new_user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field{
+  margin-bottom: 20px;
+}
+
+.login_button{
+  text-align: center;
+}
+
+.registration_blue_button{
+  line-height: 38px;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #005497;
+  border: 1px solid #005497;
+  color: #bfd3d6;
+}
