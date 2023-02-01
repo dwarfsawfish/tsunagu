@@ -57,6 +57,7 @@ gem "net-http"
 gem 'devise'
 gem 'pry-rails'
 gem 'active_hash'
+
 group :production do
   gem 'pg'
 end
