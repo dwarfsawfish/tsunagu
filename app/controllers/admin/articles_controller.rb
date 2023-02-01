@@ -1,6 +1,6 @@
 class Admin::ArticlesController < ApplicationController
   before_action :if_not_admin
-  before_action :find_article
+  before_action :find_article, only: [:edit, :update, :destroy]
 
   def new
     @article = Article.new
@@ -16,7 +16,12 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def edit
-    @article.update(article_params)
+  end
+
+  def update
+    if @article.update(article_params)
+      redirect_to article_path(@article.id)
+    end
   end
 
   def destroy
