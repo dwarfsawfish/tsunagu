@@ -3,6 +3,7 @@ class Job < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :company
   belongs_to :status
+  has_one_attached :image
 
 
   validates :occupation_id,   numericality: { other_than: 1, message: "can't be blank" }
