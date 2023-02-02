@@ -51,13 +51,13 @@
 | salary                 | integer | null: false               |
 | trial_salary           | integer | null: false               |
 | time                   | text    | null: false               |
-| holiday                | integer | null: false               |
+| holiday                | text    | null: false               |
 | benefit                | text    | null: false               |
 | benefit_supplement     | text    | null: false               |
 | qualification          | text    | null: false               |
 | emvironment            | text    | null: false               |
 | representative_message | text    | null: false               |
-| appeal                 | string  | null: false               |
+| appeal                 | text    | null: false               |
 
 
 ### Association

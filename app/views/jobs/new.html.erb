@@ -2,9 +2,9 @@
   <%= link_to 'TSUNAGU', articles_path, class: "logo" %>
 
   <div class= "form_box">
-    <div class= "company_registration_title">お仕事登録</div>
+    <div class= "job_registration_title">お仕事登録</div>
 
-    <%= form_with model: @job, url: "#", class: 'new_company', local: true do |f| %> 
+    <%= form_with model: @job, url: "#", class: 'new_job', local: true do |f| %> 
       <%= render "shared/error_messages", model: f.object %>
       
       <div class="field">
@@ -18,30 +18,116 @@
       </div>
 
       <div class="field">
-        <%= f.label : 仕事内容 %><br />
-        <%= f.text_area :work, placeholder:"", autofocus: true %>
+        <%= f.label :仕事内容 %><br />
+        <%= f.text_area :work, placeholder:"※できるだけ詳細に書きましょう。
+例）県内にある工場へ、危険物を配送します。1日10件程度で、日によっては夕方に終わることもあります。
+配送が終了したら、会社で日報を書いて業務終了となります。", rows: 10, cols: 55, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label : 入社後の育成 %><br />
-        <%= f.text_area :training, placeholder:"", autofocus: true %>
+        <%= f.label :入社後の育成 %><br />
+        <%= f.text_area :training, placeholder:"※できるだけ詳細に書きましょう。
+例）危険物の配送のため、まずは危険物に関する座学を１週間ほど行います。その後、先輩社員が運転する車に同乗して、配送ルートを覚えます。
+２週間程度で独り立ちできます。", rows: 10, cols: 55, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label : 資格 %><br />
-        <%= f.text_area :license, placeholder:"", autofocus: true %>
+        <%= f.label :資格 %><br />
+        <%= f.text_area :license, placeholder:"例）必須：大型自動車免許　歓迎：危険物乙四", rows: 5, cols: 55, autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label : 年齢制限 %><br />
-        <%= f.text_field :age, placeholder:"", autofocus: true %>
+        <%= f.label :年齢制限 %><br />
+        <%= f.text_field :age, placeholder:"例）18~45歳", autofocus: true %>
       </div>
 
       <div class="field">
-        <%= f.label : 勤務地※本社以外の場合 %><br />
+        <%= f.label :勤務地※本社以外の場合 %><br />
         <%= f.text_field :work_area, autofocus: true %>
       </div>
       
+      <div class="field">
+        <%= f.label :給与 %><br />
+        <%= f.text_field :salary, placeholder:"例）日給10,000円〜", autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :試用期間中の給与 %><br />
+        <%= f.text_area :trial_salary, placeholder:"※できるだけ詳細に書きましょう。
+例）試用期間３ヶ月/日給9,000円〜", rows: 5, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :勤務時間 %><br />
+        <%= f.text_area :time, placeholder:"※できるだけ詳細に書きましょう。
+例）8:30 ~ 17:30 
+平均残業20h/月
+休憩60分", rows: 5, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :休日 %><br />
+        <%= f.text_area :holiday, placeholder:"※できるだけ詳細に書きましょう。
+例）週休２日制（シフト制）
+年末年始・お盆", rows: 5, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="benefit_field">
+        <%= f.label :待遇 %><br />
+        <input type="checkbox" name="benefit" value="insurance">社会保険完備
+        <input type="checkbox" name="benefit" value="car">車通勤可
+        <input type="checkbox" name="benefit" value="fare">交通費支給
+        <input type="checkbox" name="benefit" value="uniform">制服貸与
+        <input type="checkbox" name="benefit" value="requirement_money">退職金制度あり
+        <input type="checkbox" name="benefit" value="raise_salary">昇給あり
+        <input type="checkbox" name="benefit" value="bonus">賞与あり
+        <input type="checkbox" name="benefit" value="regular_employee">正社員登用制度あり
+        <input type="checkbox" name="benefit" value="double">WワークOK
+        <input type="checkbox" name="benefit" value="family_allowance">扶養手当
+        <input type="checkbox" name="benefit" value="job_interview">出張面接OK
+        <input type="checkbox" name="benefit" value="domitory">寮あり
+        <input type="checkbox" name="benefit" value="license_support">資格取得支援あり
+        <input type="checkbox" name="benefit" value="way_salary">日払い・週払いOK
+      </div>
+
+      <div class="field">
+        <%= f.label :待遇の補足 %><br />
+        <%= f.text_area :benefit_supplement, placeholder:"※できるだけ詳細に書きましょう。
+例）交通費:月上限2万円
+賞与:年2回
+昇給:年1回
+扶養手当:子一人につき5000円
+残業手当:別途支給
+寮:完全個室。家電・Wi-Fi完備。家賃30,000円
+食事補助:あり", rows: 5, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :業務上、採用が難しい罪状、病気等 %><br />
+        <%= f.text_area :qualification, placeholder:"例）覚醒剤、児童虐待、放火罪、てんかん", rows: 5, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :職場の雰囲気 %><br />
+        <%= f.text_area :emvironment, placeholder:"※できるだけ詳細に書きましょう。
+例）20~30代男性を中心に活躍中です。世代が近いので、帰社したタイミングで雑談したりするなど和やかな雰囲気です。
+先輩社員も「昔はやんちゃだったんだよ〜」というような人が多いため、あなたの気持ちに共感してくれます。
+社長と社員の距離も近く、休日にみんなでBBQをしたりするなど、プライベートでも交流がある温かい職場です。", rows: 10, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :代表者メッセージ %><br />
+        <%= f.text_area :representative_message, placeholder:"※人柄が伝わるよう書きましょう。
+例）前科がついてしまった私の友人が、仕事探しや家探しでとても苦労している様子を間近で見ていました。
+「更生の気持ちはあるのに、社会に受け入れられない」という人を助けたいと思い、どんな人でも受け入れられるような温かい職場づくりをしてきました。
+居食住はもちろん、あなたの夢を叶えていけるようサポートしていくので、私たちと一緒に働きませんか？", rows: 10, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :一言アピール %><br />
+        <%= f.text_area :appeal, placeholder:"※一文でまとめましょう。
+例）世代が近く、プライベートも仲良しな職場です◎", rows: 3, cols: 55, autofocus: true %>
+      </div>
 
       <div class="registration_button">
         <%= f.submit "登録する", class: "registration_blue_button" %>
