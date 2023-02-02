@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to: "articles#index"
   resources :articles, only: [:index, :show]
+  resources :jobs, only: [:index, :new]
 
   devise_for :companies, controllers: {
     registrations: 'companies/registrations',

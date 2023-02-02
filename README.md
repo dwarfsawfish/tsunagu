@@ -39,21 +39,25 @@
 
 ## jobsテーブル
 
-| Column               | Type       | Options                        |
-| -------------------- | ---------- | ------------------------------ |
-| occupation_id        | integer    | null: false                    |
-| employment_status_id | integer    | null: false                    |
-| work_area            | text       | null: false                    |
-| job_description      | text       | null: false                    |
-| emvironment          | text       | null: false                    |
-| merit                | text       | null: false                    |
-| demerit              | text       | null: false                    |
-| benefit_package      | text       | null: false                    |
-| pay                  | integer    | null: false                    |
-| time                 | string     | null: false                    |
-| holiday              | integer    | null: false                    |
-| detail               | string     |                                |
-| company_id           | references | null: false, foreign_key: true |
+| Column                 |  Type   | Options                   |
+| ---------------------- | ------- | ------------------------- |
+| occupation_id          | integer | null: false               |
+| status_id              | integer | null: false               |
+| work                   | text    | null: false               |
+| training               | text    | null: false               |
+| license                | text    | null: false               |
+| age                    | string  | null: false               |
+| work_area              | string  |                           |
+| salary                 | integer | null: false               |
+| trial_salary           | integer | null: false               |
+| time                   | text    | null: false               |
+| holiday                | integer | null: false               |
+| benefit                | text    | null: false               |
+| benefit_supplement     | text    | null: false               |
+| qualification          | text    | null: false               |
+| emvironment            | text    | null: false               |
+| representative_message | text    | null: false               |
+| appeal                 | string  | null: false               |
 
 
 ### Association

@@ -1,0 +1,51 @@
+<div class= "registration_wrapper">
+  <%= link_to 'TSUNAGU', articles_path, class: "logo" %>
+
+  <div class= "form_box">
+    <div class= "company_registration_title">お仕事登録</div>
+
+    <%= form_with model: @job, url: "#", class: 'new_company', local: true do |f| %> 
+      <%= render "shared/error_messages", model: f.object %>
+      
+      <div class="field">
+        <%= f.label :職種カテゴリー %><br />
+        <%= f.collection_select(:occupation_id, Occupation.all, :id, :name, {}, {class:"occupation_select"}) %>
+      </div>
+
+      <div class="field">
+        <%= f.label :雇用形態 %><br />
+        <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"status_select"}) %>
+      </div>
+
+      <div class="field">
+        <%= f.label : 仕事内容 %><br />
+        <%= f.text_area :work, placeholder:"", autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label : 入社後の育成 %><br />
+        <%= f.text_area :training, placeholder:"", autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label : 資格 %><br />
+        <%= f.text_area :license, placeholder:"", autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label : 年齢制限 %><br />
+        <%= f.text_field :age, placeholder:"", autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label : 勤務地※本社以外の場合 %><br />
+        <%= f.text_field :work_area, autofocus: true %>
+      </div>
+      
+
+      <div class="registration_button">
+        <%= f.submit "登録する", class: "registration_blue_button" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -96,8 +96,8 @@
         </div>
       </div>
       <div class= "action_buttons">
-        <a href= "#" class= "find_job_button">仕事を探す</a>
-        <a href= "#" class= "register_job_button">仕事を登録する</a>
+        <%= link_to '仕事を探す', jobs_path, class: "find_job_button" %>
+        <%= link_to '仕事を登録する', new_job_path, class: "register_job_button" %>
       </div>
     </div>
 

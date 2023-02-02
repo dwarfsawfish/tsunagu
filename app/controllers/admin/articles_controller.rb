@@ -1,5 +1,5 @@
 class Admin::ArticlesController < ApplicationController
-  before_action :if_not_admin
+  before_action :if_not_admin, only: [:new, :edit]
   before_action :find_article, only: [:edit, :update, :destroy]
 
   def new
@@ -33,7 +33,9 @@ class Admin::ArticlesController < ApplicationController
 
   private
   def if_not_admin
-    redirect_to root_path unless current_user.admin?
+    unless user_signd_in? && current_user.admin?
+    redirect_to root_path
+    end
   end
 
   def article_params

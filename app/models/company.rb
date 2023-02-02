@@ -3,6 +3,7 @@ class Company < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :prefecture
+  has_many :jobs
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

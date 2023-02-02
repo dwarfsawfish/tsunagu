@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  before_action :only_admin, only: [:new]
+  before_action :if_not_admin, only: [:new, :edit]
 
   def index
     @articles = Article.all
@@ -12,9 +12,9 @@ class ArticlesController < ApplicationController
 
 
   private
-  def only_admin
+  def if_not_admin
     unless user_signd_in? && current_user.admin?
-      redirect_to action: :index
+      redirect_to root_path
     end
   end
 end

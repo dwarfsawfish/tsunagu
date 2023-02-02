@@ -5,7 +5,7 @@
   <div class= "form_box">
     <h2 class= "login_title">企業用 ログイン画面</h2>
     <%= form_with model: @company, url: company_session_path, id: 'new_user', class: 'new_user', local: true do |f| %> 
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= render "shared/error_messages", model: f.object %>
 
       <div class="field">
         <%= f.label :メールアドレス %><br />
