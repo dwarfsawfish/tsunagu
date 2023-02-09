@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Offers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Postage</th>
+      <th>City</th>
+      <th>House number</th>
+      <th>Building</th>
+      <th>Phone number</th>
+      <th>Academic career</th>
+      <th>Work history</th>
+      <th>Appeal</th>
+      <th>User</th>
+      <th>Job</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @offers.each do |offer| %>
+      <tr>
+        <td><%= offer.first_name %></td>
+        <td><%= offer.last_name %></td>
+        <td><%= offer.email %></td>
+        <td><%= offer.age %></td>
+        <td><%= offer.postage_id %></td>
+        <td><%= offer.city %></td>
+        <td><%= offer.house_number %></td>
+        <td><%= offer.building %></td>
+        <td><%= offer.phone_number %></td>
+        <td><%= offer.academic_career %></td>
+        <td><%= offer.work_history %></td>
+        <td><%= offer.appeal %></td>
+        <td><%= offer.user_id_id %></td>
+        <td><%= offer.job_id_id %></td>
+        <td><%= link_to 'Show', offer %></td>
+        <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
+        <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Offer', new_offer_path %>

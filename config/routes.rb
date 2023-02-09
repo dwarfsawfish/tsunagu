@@ -2,17 +2,20 @@ Rails.application.routes.draw do
 
   root to: "articles#index"
   resources :articles, only: [:index, :show]
-  resources :jobs, only: [:index, :new]
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  resources :jobs do
+    resources :offers, only: [:new, :create]
+  end
 
   devise_for :companies, controllers: {
     registrations: 'companies/registrations',
-    sessions: 'companies/sessions'
+    sessions: 'companies/sessions',
   }
   
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
   }
 
   namespace :admin do

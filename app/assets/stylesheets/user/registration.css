@@ -1,4 +1,4 @@
-.registration_wrapper{
+.user_registration_wrapper{
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -7,7 +7,7 @@
 }
 
 
-.logo{
+.user_registration_logo{
   color: #005497;
   margin: auto;
   text-decoration-line: none;
@@ -16,37 +16,38 @@
 }
 
 
-.form_box{
+
+.user_registration_form_box{
   height: 80%;
   width: 60%;
   margin: auto;
+  overflow: scroll;
   background-color: beige;
 }
 
-.registration_title{
+.user_registration_title{
+  text-align: center;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.new_user{
+.new_registration_user{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.field{
+.user_registration_field{
   margin-bottom: 20px;
 }
 
-.login_button{
-  text-align: center;
-}
-
-.registration_blue_button{
+.user_registration_blue_button{
   line-height: 38px;
   font-size: 18px;
   border-radius: 5px;
   padding: 8px;
+  margin-bottom: 30px;
   background-color: #005497;
   border: 1px solid #005497;
-  color: #bfd3d6;
+  color: beige;
 }

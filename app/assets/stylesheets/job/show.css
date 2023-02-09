@@ -1,0 +1,110 @@
+.job_show_main{
+  height: calc(100vh - 100px - 120px);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-color: beige;
+}
+
+.job_show_title{
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+/****************求人情報****************/
+.job_show_contents{
+  line-height: 38px;
+}
+
+/****求人情報の上部****/
+.job_show_top{
+  display:flex;
+}
+
+.job_image{
+  height: 300px;
+  width: 300px;
+}
+
+.job_show_top{
+  margin-bottom: 50px;
+}
+
+.job_show_right{
+  width: 70%;
+  margin-left: 50px;
+  font-size: 18px;
+  padding-left: 15px;
+  padding-top: 15px;
+  background-color: #bfd3d6;
+  border: 1px solid #005497;
+  border-radius: 10px;
+}
+
+.job_show_right_title{
+  font-weight: 200;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/****求人情報の中部****/
+
+.job_show_middle_title, .job_show_bottom_title{
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.job_show_middle{
+    height: 300px;
+    width: 90%;
+    padding-top: 15px;
+    padding-left: 15px;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: #bfd3d6;
+    border: 1px solid #005497;
+    border-radius: 10px;
+}
+
+/****求人情報の下部****/
+.job_show_bottom{
+  height: 400px;
+  width: 90%;
+  padding-top: 15px;
+  padding-left: 15px;
+  margin: auto;
+  margin-bottom: 50px;
+  background-color: #bfd3d6;
+  border: 1px solid #005497;
+  border-radius: 10px;
+}
+
+/******投稿者専用ボタン*******/
+.only_company_buttons{
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.job_edit_button, .job_delete_button{
+  line-height: 38px;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #005497;
+  border: 1px solid #005497;
+  color: beige;
+}
+
+/******投稿した企業以外が見れるボタン*******/
+.apply_button{
+  line-height: 38px;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #005497;
+  border: 1px solid #005497;
+  color: beige;
+}

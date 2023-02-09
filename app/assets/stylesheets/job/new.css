@@ -1,4 +1,4 @@
-.registration_wrapper{
+.job_registration_wrapper{
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -7,7 +7,7 @@
 }
 
 
-.logo{
+.job_logo{
   color: #005497;
   margin: auto;
   text-decoration-line: none;
@@ -16,13 +16,16 @@
 }
 
 
-.form_box{
+.job_form_box{
   height: 80%;
   width: 60%;
   margin: auto;
   overflow: scroll;
   position: relative;
-  background-color: #efe2dd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: beige;
 }
 
 .job_registration_title{
@@ -35,31 +38,30 @@
 
 
 .new_job{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: absolute;
   top: 100px;
 }
 
-.field{
-  margin-bottom: 60px;
+.job_field{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .benefit_field{
-  width: 85%;
+  width: 80%;
+  margin-left: 70px;
   margin-bottom: 50px;
 }
 
-
-.registration_blue_button{
+.job_registration_blue_button{
   line-height: 38px;
   font-size: 18px;
-  border-radius: 5px;
   padding: 8px;
+  margin-left: 280px;
   margin-bottom: 20px;
+  border-radius: 5px;
   background-color: #005497;
-  border: 1px solid #005497;
   color: beige;
 }
-

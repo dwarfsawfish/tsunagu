@@ -1,0 +1,49 @@
+    <!-- ヘッダー -->
+    <header class="header">
+      <%= link_to 'TSUNAGU', articles_path,  class: "left_header" %>
+
+      <div class= "right_header">
+
+
+        <% if user_signed_in? && current_user.admin? %>
+          <div class= "right2">
+            <div class= "target3">管理者用</div>
+            <div class= "buttons">
+              <%= link_to '記事を投稿する', new_admin_article_path, class: "admin_article_button" %>
+              <%= link_to 'ログアウト', destroy_user_session_path, class: "logout_button", method: :delete %>
+            </div>
+          </div>
+
+        <% elsif user_signed_in? %>
+          <div class= "right1">
+            <div class="target1">求職者の方はこちら</div>
+            <div class= "buttons">
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout_button" %>
+            </div>
+          </div>
+        <% elsif company_signed_in? %> 
+          <div class= "right2">
+            <div class= "target2">企業の方はこちら</div>
+            <div class= "buttons">
+              <%= link_to 'ログアウト', destroy_company_session_path, method: :delete, class: "logout_button" %>
+            </div>
+          </div>
+
+        <% else %>
+          <div class= "right1">
+            <div class= "target1">求職者の方はこちら</div>
+            <div class= "buttons">
+              <%= link_to '新規登録', new_user_registration_path, class: "register_button" %>
+              <%= link_to 'ログイン', new_user_session_path, class: "login_button" %>
+            </div>
+          </div>
+          <div class= "right2">
+            <div class= "target2">企業の方はこちら</div>
+            <div class= "buttons">
+              <%= link_to '新規登録', new_company_registration_path, class: "register_button" %>
+              <%= link_to 'ログイン', new_company_session_path, class: "login_button" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </header>

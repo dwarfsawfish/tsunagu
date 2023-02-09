@@ -18,6 +18,7 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.text    :emvironment,                 null: false
       t.text    :representative_message,      null: false
       t.string  :appeal,                      null: false
+      t.references :company,                  null: false
       t.timestamps
     end
   end

@@ -5,62 +5,20 @@
     <title>Tsunagu</title>
   </head>
   <body>
-    <!-- ヘッダー -->
-    <header class="header">
-      <%= link_to 'TSUNAGU', articles_path,  class: "left_header" %>
 
-      <div class= "right_header">
-
-
-        <% if user_signed_in? && current_user.admin? %>
-          <div class= "right2">
-            <div class= "target3">管理者用</div>
-            <div class= "buttons">
-              <%= link_to '記事を投稿する', new_admin_article_path, class: "admin_article_button" %>
-              <%= link_to 'ログアウト', destroy_user_session_path, class: "logout_button", method: :delete %>
-            </div>
-          </div>
-
-        <% elsif user_signed_in? %>
-          <div class= "right1">
-            <div class="target1">求職者の方はこちら</div>
-            <div class= "buttons">
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout_button" %>
-            </div>
-          </div>
-          <div class= "right2">
-            <div class= "target2">企業の方はこちら</div>
-            <div class= "buttons">
-              <%= link_to 'ログアウト', destroy_company_session_path, method: :delete, class: "logout_button" %>
-            </div>
-          </div>
-
-        <% else %>
-          <div class= "right1">
-            <div class= "target1">求職者の方はこちら</div>
-            <div class= "buttons">
-              <%= link_to '新規登録', new_user_registration_path, class: "register_button" %>
-              <%= link_to 'ログイン', new_user_session_path, class: "login_button" %>
-            </div>
-          </div>
-          <div class= "right2">
-            <div class= "target2">企業の方はこちら</div>
-            <div class= "buttons">
-              <%= link_to '新規登録', new_company_registration_path, class: "register_button" %>
-              <%= link_to 'ログイン', new_company_session_path, class: "login_button" %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </header>
+    <%= render "shared/header" %>
 
     <!-- トップページのメイン -->
     <div class="index_main">
       <div class= "main_message">
         <img src="assets/top.jpg" alt="サンプル画像です" class= "top_image">
         <div class= "main_text">
-          <p>メイン<br>
-          あとで文章入れる、メインメッセージ部分
+          <h1>49.1%</h1>
+          <p>
+          これは、昨年刑法犯で検挙された人のうち、再犯者の割合を示すものです。<br />
+          出所後、彼らが再び罪を犯してしまう要因の一つとして、前科を条件に就職できないというものがあります。<br />
+          当サイトでは、「働きたくても働く先がない」「仕事の選択肢が少ない」という出所者に対し、<br />
+          前科があっても、彼らの更生を支援してくださる方を繋げるための情報提供を行なっていきます。
           </p>
         </div>
       </div>
@@ -101,13 +59,7 @@
       </div>
     </div>
 
-    <!-- フッター -->
-    <footer class="footer">
-      <div class= "contact">CONTACT US
-        <div class= "contact_message">お問い合わせはこちらから</div>
-        <div class= "tel">Tel : 0000-00-0000</div>
-        <%= link_to 'TOPへ戻る', articles_path, class: "toppage_button" %>
-      </div>
-    </footer>
+    <%= render "shared/footer" %>
+
   </body>
 </html>

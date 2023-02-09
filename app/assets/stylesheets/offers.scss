@@ -1,0 +1,58 @@
+// Place all the styles related to the offers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.apply_wrapper{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #bfd3d6;
+}
+
+
+.apply_logo{
+  color: #005497;
+  margin: auto;
+  text-decoration-line: none;
+  font-weight: 200;
+  font-size: 40px;
+}
+
+/*******フォームの黄色い部分*******/
+
+.apply_form_box{
+  height: 80%;
+  width: 60%;
+  overflow: scroll;
+  margin: auto;
+  background-color: beige;
+}
+
+.apply_title{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.apply_form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.apply_field{
+  margin-bottom: 20px;
+}
+
+.apply_blue_button{
+  line-height: 38px;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 30px;
+  background-color: #005497;
+  border: 1px solid #005497;
+  color: beige;
+}

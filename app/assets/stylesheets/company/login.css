@@ -1,0 +1,51 @@
+.company_session_wrapper{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #bfd3d6;
+}
+
+
+.company_session_logo{
+  color: #005497;
+  margin: auto;
+  text-decoration-line: none;
+  font-weight: 200;
+  font-size: 40px;
+}
+
+
+.company_session_form_box{
+  height: 70%;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+  background-color: beige;
+}
+
+.company_session_title{
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.company_session_field{
+  margin-bottom: 30px;
+}
+
+.company_session_button{
+  text-align: center;
+}
+
+.company_session_blue_button{
+line-height: 38px;
+font-size: 18px;
+border-radius: 5px;
+padding: 8px;
+border: 1px solid #005497;
+background-color: #005497;
+color: beige;
+}

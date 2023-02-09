@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_02_122332) do
+ActiveRecord::Schema.define(version: 2023_02_07_120130) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -81,8 +81,31 @@ ActiveRecord::Schema.define(version: 2023_02_02_122332) do
     t.text "emvironment", null: false
     t.text "representative_message", null: false
     t.string "appeal", null: false
+    t.bigint "company_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_jobs_on_company_id"
+  end
+
+  create_table "offers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "email", null: false
+    t.integer "age", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "building"
+    t.string "phone_number", null: false
+    t.text "academic_career", null: false
+    t.text "work_history", null: false
+    t.text "appeal"
+    t.bigint "user_id", null: false
+    t.bigint "job_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["job_id"], name: "index_offers_on_job_id"
+    t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

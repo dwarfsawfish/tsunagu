@@ -2,7 +2,9 @@ class Job < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :company
+  belongs_to :occupation
   belongs_to :status
+  has_many :offers, dependent: :destroy
   has_one_attached :image
 
 
@@ -25,5 +27,8 @@ class Job < ApplicationRecord
     validates :benefit
     validates :benefit_supplement
     validates :emvironment
+    validates :image
   end
+
+  
 end

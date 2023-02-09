@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tsunagu</title>
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <%= render "shared/header" %>
+
+
+    <!-- 仕事探しページのメイン -->
+    <div class="job_show_main">
+      <div class="job_show_title">お仕事詳細</div>
+      <div class="job_show_contents">
+        <div class="job_show_top">
+          <%= image_tag @job.image, class: "job_image" %>
+          <div class="job_show_right">
+            <div class="job_show_right_title">
+              <%= @job.company.company_name %> 代表者メッセージ<br />
+            </div>
+            <%= @job.representative_message %><br />
+          </div>
+        </div>
+        <div class="job_show_middle">
+          <div class="job_show_middle_title">お仕事・職場の雰囲気</div>
+          仕事内容：<%= @job.work %><br />
+          育成中：<%= @job.training %><br />
+          職場の雰囲気：<%= @job.emvironment %><br />
+        </div>
+        <div class="job_show_bottom">
+          <div class="job_show_bottom_title">条件・待遇</div>
+          給与：<%= @job.salary %><br />
+          試用期間中：<%= @job.trial_salary %><br />
+          勤務時間：<%= @job.time %><br />
+          休日：<%= @job.holiday %><br />
+          年齢制限：<%= @job.age %><br />
+          採用が難しい罪状・病気：<%= @job.qualification %><br />
+          待遇：<%= @job.benefit %><br />
+          待遇の補足：<%= @job.benefit_supplement %><br />
+        
+          <% unless @job.work_area.empty? %>
+            <div class="work_area">
+              勤務地：<%= @job.work_area %><br />
+            </div>
+          <% else %>
+            <div class="work_area">
+              勤務地：<%= @job.company.prefecture.name %><%= @job.company.city %><%= @job.company.house_number %><%= @job.company.building %><br />
+            </div>  
+            <% end %>
+          </div>
+        </div>
+        <div class="only_company_buttons">
+          <% if company_signed_in? && current_company.id == @job.company_id %>
+            <%= link_to '編集する', edit_job_path(@job.id), class: "job_edit_button" %>
+            <%= link_to '削除する', job_path(@job.id), method: :delete, class: "job_delete_button" %>
+          <% else %>
+            <%= link_to '応募する', new_job_offer_path(@job.id), class: "apply_button" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- フッター -->
+    <%= render "shared/footer" %>
+
+  </body>
+</html>

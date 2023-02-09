@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tsunagu</title>
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <%= render "shared/header" %>
+
+
+    <!-- 仕事探しページのメイン -->
+    <div class="job_index_main">
+      <div class="job_main_title">お仕事一覧</div>
+        <div class="job_lists">
+          <% @jobs.each do |job| %>
+            <div class="job_content">
+              <%= link_to job_path(job.id) do %>
+                <div class="job_image_content">
+                  <%= image_tag job.image.variant(resize: '200x200'), class: "job_index_image" %>
+              <% end %>
+                </div>
+                <div class="job_text">
+                  <div class="job_text_top">
+                    <div class="occupation">カテゴリー：<%= job.occupation.name %></div>
+                    <div class="status">雇用形態：<%= job.status.name %></div>
+                  </div>
+                  <div class="job_text_bottom">
+                    <% unless job.work_area.empty? %>
+                        勤務地：<%= job.work_area %><br />
+                    <% else %>
+                        勤務地：<%= job.company.prefecture.name %><%= job.company.city %><%= job.company.house_number %><%= job.company.building %><br />
+                    <% end %>
+                    時間：<%= job.time %><br />
+                    給与：<%= job.salary %><br />
+                    アピールポイント：<%= job.appeal %><br />
+                    社名：<%= job.company.company_name %>
+                  </div>
+                </div>
+            </div>
+          <% end %>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <%= render "shared/footer" %>
+
+  </body>
+</html>

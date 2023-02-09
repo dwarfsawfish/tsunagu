@@ -1,59 +1,59 @@
-<div class= "registration_wrapper">
-  <%= link_to 'TSUNAGU', articles_path, class: "logo" %>
+<div class= "company_registration_wrapper">
+  <%= link_to 'TSUNAGU', articles_path, class: "company_registration_logo" %>
 
-  <div class= "form_box">
+  <div class= "company_registration_form_box">
     <div class= "company_registration_title">新規登録</div>
 
-    <%= form_with model: @company, url: company_registration_path, class: 'new_company', local: true do |f| %> 
-      <%= render "shared/error_messages", model: f.object %>
+    <%= form_with model: @company, url: company_registration_path, class: 'company_registration', local: true do |f| %> 
+      <%= render "shared/error_messages",  resource: @company %>
 
-      <div class="field">
+      <div class="company_registration_field">
         <%= f.label :会社名 %><br />
         <%= f.text_field :company_name, autofocus: true %>
       </div>
       
-      <div class="field">
+      <div class="company_registration_field">
         <%= f.label :業種カテゴリー %><br />
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category_select"}) %>
       </div>
 
-      <div class="field">
+      <div class="company_registration_field">
         <%= f.label :本社所在地 %><br />
         <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"prefecture_select"}) %>
       </div>
 
-      <div class="field">
+      <div class="company_registration_field">
         <%= f.label :市町村 %><br />
         <%= f.text_field :city, autofocus: true %>
       </div>
 
-      <div class="field">
+      <div class="company_registration_field">
         <%= f.label :番地 %><br />
         <%= f.text_field :house_number, autofocus: true %>
       </div>
 
-      <div class="field">
+      <div class="company_registration_field">
         <%= f.label :建物名 %><br />
         <%= f.text_field :building, autofocus: true %>
       </div>
 
 
-      <div class="field">
+      <div class="company_registration_field">
         <%= f.label :姓 %><br />
         <%= f.text_field :last_name, placeholder:"例) 山田", autofocus: true %><br />
       </div>
 
-      <div class="field">
+      <div class="company_registration_field">
         <%= f.label :名 %><br />
         <%= f.text_field :first_name, placeholder:"例) 太郎", autofocus: true %><br />
       </div>
 
-      <div class="field">
+      <div class="company_registration_field">
         <%= f.label :メールアドレス %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
       </div>
 
-      <div class="field">
+      <div class="company_registration_field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> 文字以上)</em>
@@ -61,13 +61,13 @@
         <%= f.password_field :password, autocomplete: "new-password" %>
       </div>
 
-      <div class="field">
+      <div class="company_registration_field">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
       <div class="registration_button">
-        <%= f.submit "登録する", class: "registration_blue_button" %>
+        <%= f.submit "登録する", class: "company_registration_blue_button" %>
       </div>
     <% end %>
   </div>

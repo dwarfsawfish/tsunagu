@@ -1,4 +1,4 @@
-.session_wrapper{
+.user_session_wrapper{
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -6,7 +6,7 @@
   background-color: #bfd3d6;
 }
 
-.logo{
+.user_session_logo{
   color: #005497;
   margin: auto;
   text-decoration-line: none;
@@ -14,7 +14,11 @@
   font-size: 40px;
 }
 
-.form_box{
+.login-flash-message{
+  text-align: center;
+}
+
+.user_session_form_box{
   height: 70%;
   width: 60%;
   margin: auto;
@@ -25,24 +29,24 @@
   background-color: beige;
 }
 
-.login_title{
+.user_session_title{
   margin-bottom: 50px;
 }
 
-.field{
+.user_session_field{
   margin-bottom: 30px;
 }
 
-.login_button{
+.user_session_button{
   text-align: center;
 }
 
-.login_blue_button{
+.user_session_blue_button{
   padding: 8px;
   font-size: 18px;
   align-items: center;
   border-radius: 5px;
   background-color: #005497;
   border: 1px solid #005497;
-  color: #bfd3d6;
+  color: beige;
 }

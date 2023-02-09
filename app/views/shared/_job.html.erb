@@ -1,0 +1,12 @@
+
+<% jobs.each do |job| %>
+  <div class="job_lists">
+    <div class="job_image_content">
+      <%= image_tag job.image, class: "job_image" %>
+    </div>
+    <div class="job_text">
+      <%= job.appeal %>
+      <%= job.occupation_id.name %>
+    </div>
+  </div>
+<% end %>

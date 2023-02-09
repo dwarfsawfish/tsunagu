@@ -1,0 +1,89 @@
+<div class= "apply_wrapper">
+  <%= link_to 'TSUNAGU', articles_path, class: "apply_logo" %>
+
+
+  <div class= "apply_form_box">
+    <div class= "apply_title">応募画面</div>
+
+    <%= form_with model: offer, url: job_offers_path, class: 'apply_form', local: true do |f| %>
+      <% if offer.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
+
+          <ul>
+            <% offer.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+
+      <div class="apply_field">
+        <%= f.label :姓 %><br />
+        <%= f.text_field :last_name, autofocus: true %>
+      </div>
+
+      <div class="apply_field">
+        <%= f.label :名 %><br />
+        <%= f.text_field :first_name, autofocus: true %>
+      </div>
+
+      <div class="apply_field">
+        <%= f.label :メールアドレス %><br />
+        <%= f.text_field :email, rows: 1, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="apply_field">
+        <%= f.label :年齢 %><br />
+        <%= f.number_field :age, autofocus: true %>歳
+      </div>
+
+      <div class="apply_field">
+        <%= f.label :都道府県 %><br />
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"prefecture-select"}) %>
+      </div>
+
+      <div class="apply_field">
+        <%= f.label :市町村 %><br />
+        <%= f.text_field :city, rows: 1, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="apply_field">
+        <%= f.label :番地 %><br />
+        <%= f.text_field :house_number, rows: 1, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="apply_field">
+        <%= f.label :建物名 %><br />
+        <%= f.text_field :building, rows: 1, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="apply_field">
+        <%= f.label :電話番号 %><br />
+        <%= f.text_field :phone_number, rows: 1, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="apply_field">
+        <%= f.label :最終学歴 %><br />
+        <%= f.text_area :academic_career, placeholder:"例）2010年  ●●高校 ●●学科卒業", rows: 1, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="apply_field">
+        <%= f.label :職歴 %><br />
+        <%= f.text_area :work_history, placeholder:"例）2010年4月~2012年3月 ●●会社で、3・4tダンプカーの運転を担当。
+2012年5月~2012年10月 居酒屋●●で、キッチン業務を担当。", rows: 5, cols: 55, autofocus: true %>
+      </div>
+
+      <div class="apply_field">
+        <%= f.label :自己アピール %><br />
+        <%= f.text_area :appeal, placeholder:"例）体力には自信があります。手先も器用なため、細かい作業が得意です。", rows: 5, cols: 55, autofocus: true %>
+      </div>
+
+
+      <div class="apply_actions">
+        <%= f.submit "送信する", class: "apply_blue_button" %>
+      </div>
+    <% end %>
+  </div>
+</div>
