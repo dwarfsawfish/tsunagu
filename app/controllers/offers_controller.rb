@@ -11,7 +11,7 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
     if @offer.save
       OfferMailer.offer_mail(@offer).deliver
-      redirect_to job_path(@job), notice: 'Offer was successfully created.'
+      redirect_to job_path(@job)
     else 
       render :new
     end
