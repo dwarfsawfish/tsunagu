@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
-  before_action :if_not_company, only: [:new, :edit, :destroy]
+  before_action :authenticate_company!, only: [:new, :edit, :destory]
   before_action :find_job, only: [:show, :edit, :destroy, :update]
+  before_action :if_not_company, only: [:edit, :destroy]
 
   def index
     @jobs = Job.includes(:company)
@@ -48,7 +49,7 @@ class JobsController < ApplicationController
   end
 
   def if_not_company
-    unless company_signed_in?
+    unless company_signed_in? && current_company.id == @job.company_id
       redirect_to root_path
     end
   end

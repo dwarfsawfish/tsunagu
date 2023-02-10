@@ -1,15 +1,13 @@
 class OffersController < ApplicationController
-
+  before_action :find_job, only: [:new, :create]
+  before_action :if_company, only: [:new]
   before_action :if_not_login, only: [:new]
 
-
   def new
-    @job = Job.find(params[:job_id])
     @offer = Offer.new
   end
 
   def create
-    @job = Job.find(params[:job_id])
     @offer = Offer.new(offer_params)
     if @offer.save
       OfferMailer.offer_mail(@offer).deliver
@@ -21,6 +19,11 @@ class OffersController < ApplicationController
 
 
   private
+
+    def find_job
+      @job = Job.find(params[:job_id])
+    end
+
     def offer_params
       params.require(:offer).permit(:first_name, :last_name, :email, :age, :prefecture_id, :city, :house_number,
         :building, :phone_number, :academic_career, :work_history, :appeal)
@@ -30,6 +33,12 @@ class OffersController < ApplicationController
     def if_not_login
       unless user_signed_in?
         redirect_to new_user_session_path
+      end
+    end
+
+    def if_company
+      if company_signed_in?
+        redirect_to root_path
       end
     end
 end
