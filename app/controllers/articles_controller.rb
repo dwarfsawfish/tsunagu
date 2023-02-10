@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :if_not_admin, only: [:new, :edit]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order("created_at DESC")
   end
 
   def show

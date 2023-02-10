@@ -1,10 +1,17 @@
 <p>
+  <%= @offer.job.company.company_name %><br />
+  <%= @offer.job.company.last_name %><%= @offer.job.company.first_name %>様<br />
+<br />
+<br />
   <%= @offer.last_name %><%= @offer.first_name %>様より応募がありました。<br />
+<br />
   電話番号:<%= @offer.phone_number %><br />
   メールアドレス：<%= @offer.email %><br />
   のいずれかへご連絡いただき、面接日時を決めてください。<br />
-  以上、どうぞよろしくお願いいたします。<br />
-
+<br />
+<br />
+  詳細<br />
+<br />
   年齢:<%= @offer.age %><br />
   住所:
   <%= @offer.prefecture.name %>
@@ -14,4 +21,6 @@
   学歴:<%= @offer.academic_career %><br />
   職歴:<%= @offer.work_history %><br />
   自己アピール:<%= @offer.appeal %><br />
+<br />
+以上、どうぞよろしくお願いいたします。
 </p>
