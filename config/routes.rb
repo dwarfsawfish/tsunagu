@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: "articles#index"
   resources :articles, only: [:index, :show]
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development? || Rails.env.production?
   resources :jobs do
     resources :offers, only: [:new, :create]
   end
