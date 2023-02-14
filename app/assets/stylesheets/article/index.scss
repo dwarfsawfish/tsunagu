@@ -35,6 +35,11 @@
   color: #005497;
 }
 
+.company_target2{
+  margin: 10px 0 10px 70px;
+  color: #005497;
+}
+
 .buttons{
   display: flex;
   justify-content: center;
@@ -65,12 +70,6 @@
   background-color: #005497;
 }
 
-.logout_button{
-  border: 1px solid #005497;
-  border-radius: 5px;
-  padding: 8px;
-  background-color: #005497;
-}
 
 .offer_check_button{
   border: 1px solid #005497;
@@ -78,6 +77,13 @@
   padding: 8px;
   background-color: #005497;
   margin-right: 8px;
+}
+
+.logout_button{
+  border: 1px solid #005497;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #005497;
 }
 
 ////管理者用の記事投稿ボタン////
