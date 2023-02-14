@@ -23,7 +23,7 @@ User.create!(nickname: ENV["ADMIN_NICKNAME"],
     admin: false)
 
     Company.create!(company_name: ENV["COMPANY_NAME"],
-      email: ENV["COMPANY_"EMAIL],
+      email: ENV["COMPANY_EMAIL"],
       password: ENV["COMPANY_PASSWORD"],
       password_confirmation: ENV["COMPANY_PASSWORD_CONFIRMATION"],
       category_id: ENV["COMPANY_CATEGORY"],
