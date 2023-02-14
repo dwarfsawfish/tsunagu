@@ -29,6 +29,6 @@ User.create!(nickname: ENV["ADMIN_NICKNAME"],
       category_id: ENV["COMPANY_CATEGORY"],
       prefecture_id: ENV["COMPANY_PREFECTURE"],
       city: ENV["COMPANY_CITY"],
-      house_number: ENV["HOUSE_NUMBER"],
+      house_number: ENV["COMPANY_HOUSE_NUMBER"],
       last_name: ENV["COMPANY_LAST_NAME"],
       first_name: ENV["COMPANY_FIRST_NAME"])
