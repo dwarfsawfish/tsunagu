@@ -124,21 +124,23 @@
 
 
 .main_text{
+height: 400px;
+width: 100vw;
 position: absolute;
+text-align: center;
 top: 50px;
 left: 50px;
 }
 
 h1{
-text-align: center;
 margin-bottom: 50px;
+color: #005497;
 }
 
 p{
   font-size: 20px;
   font-weight: bold;
-  text-align: center;
-  color: black;
+  color: #005497;
 }
 
 ////管理者の投稿記事の表示部分////
@@ -168,6 +170,7 @@ p{
 .article_box p{
   margin-left: 15px;
   font-weight: 200;
+  text-align: center;
 }
 
 .company_articles{
