@@ -13,3 +13,22 @@ User.create!(nickname: ENV["ADMIN_NICKNAME"],
   last_name: ENV["ADMIN_LAST_NAME"],
   first_name: ENV["ADMIN_FIRST_NAME"],
   admin: true)
+
+  User.create!(nickname: ENV["USER_NICKNAME"],
+    email: ENV["USER_EMAIL"],
+    password: ENV["USER_PASSWORD"],
+    password_confirmation: ENV["USER_PASSWORD_CONFIRMATION"],
+    last_name: ENV["USER_LAST_NAME"],
+    first_name: ENV["USER_FIRST_NAME"],
+    admin: false)
+
+    Company.create!(company_name: ENV["COMPANY_NAME"],
+      email: ENV["COMPANY_"EMAIL],
+      password: ENV["COMPANY_PASSWORD"],
+      password_confirmation: ENV["COMPANY_PASSWORD_CONFIRMATION"],
+      category_id: ENV["COMPANY_CATEGORY"],
+      prefecture_id: ENV["COMPANY_PREFECTURE"],
+      city: ENV["COMPANY_CITY"],
+      house_number: ENV["HOUSE_NUMBER"],
+      last_name: ENV["COMPANY_LAST_NAME"],
+      first_name: ENV["COMPANY_FIRST_NAME"])
