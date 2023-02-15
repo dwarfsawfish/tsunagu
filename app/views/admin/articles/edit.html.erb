@@ -1,5 +1,5 @@
 <div class="article_post">
-  <h1>管理者用 投稿ページ</h1>
+  <h1>管理者用 編集ページ</h1>
   <div class="article_forms">
     <%= form_with url: "/admin/articles/#{@article.id}", method: :patch, local: true do |f| %>
       <%= f.collection_select(:sorting_id, Sorting.all, :id, :name, {}, {class:"genre-select"}) %>

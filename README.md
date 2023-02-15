@@ -7,7 +7,8 @@ TSUNAGU（つなぐ）
 <br />
 
 # URL
- 
+ https://tsunagu.onrender.com
+
 <br />
 
 # BASIC認証
@@ -88,6 +89,7 @@ TSUNAGU（つなぐ）
 ・フロントエンド
 ・バックエンド
 ・テキストエディタ
+・インフラ？
 
 # ローカルでの動作方法
 以下のコマンドを順に実行。

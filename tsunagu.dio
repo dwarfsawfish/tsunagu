@@ -167,6 +167,11 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
+                <mxCell id="91" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="67">
+                    <mxGeometry x="-0.2804" y="-5" relative="1" as="geometry">
+                        <mxPoint y="-1" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
                 <mxCell id="69" value="articles" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;fillColor=#FF9999;" parent="1" vertex="1">
                     <mxGeometry x="41" y="200" width="160" height="146" as="geometry"/>
                 </mxCell>
