@@ -1,50 +1,54 @@
 <div class= "user_registration_wrapper">
   <%= link_to 'TSUNAGU', articles_path, class: "user_registration_logo" %>
 
+  <div class='registration-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
 
 
   <div class= "user_registration_form_box">
     <h2 class= "user_registration_title">新規登録</h2>
 
-    <%= form_with model: @user, url: user_registration_path, id: 'new_registration_user', class: 'new_registration_user', local: true do |f| %> 
-      <%= render "shared/error_messages", resource: @user %>
+      <%= form_with model: @user, url: user_registration_path, id: 'new_registration_user', class: 'new_registration_user', local: true do |f| %> 
+        <%= render "shared/error_messages", resource: @user %>
 
-      <div class="user_registration_field">
-        <%= f.label :ニックネーム %><br />
-        <%= f.text_field :nickname, autofocus: true %>
-      </div>
+        <div class="user_registration_field">
+          <%= f.label :ニックネーム %><br />
+          <%= f.text_field :nickname, autofocus: true %>
+        </div>
 
-      <div class="user_registration_field">
-        <%= f.label :姓 %><br />
-        <%= f.text_field :last_name, placeholder:"例) 山田", autofocus: true %><br />
-      </div>
+        <div class="user_registration_field">
+          <%= f.label :姓 %><br />
+          <%= f.text_field :last_name, placeholder:"例) 山田", autofocus: true %><br />
+        </div>
 
-      <div class="user_registration_field">
-        <%= f.label :名 %><br />
-        <%= f.text_field :first_name, placeholder:"例) 太郎", autofocus: true %><br />
-      </div>
+        <div class="user_registration_field">
+          <%= f.label :名 %><br />
+          <%= f.text_field :first_name, placeholder:"例) 太郎", autofocus: true %><br />
+        </div>
 
-      <div class="user_registration_field">
-        <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+        <div class="user_registration_field">
+          <%= f.label :メールアドレス %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
 
-      <div class="user_registration_field">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> 文字以上)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
+        <div class="user_registration_field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
 
-      <div class="user_registration_field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+        <div class="user_registration_field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
 
-      <div class="user_registration_button">
-        <%= f.submit "登録する", class: "user_registration_blue_button" %>
-      </div>
-    <% end %>
+        <div class="user_registration_button">
+          <%= f.submit "登録する", class: "user_registration_blue_button" %>
+        </div>
+      <% end %>
   </div>
 </div>

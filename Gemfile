@@ -35,6 +35,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'gimei'
+  gem 'rails-i18n'
 end
 
 group :development do
@@ -68,4 +69,5 @@ gem 'image_processing', '~> 1.2'
 group :production do
   gem 'pg'
   gem 'letter_opener_web'
+  gem 'rails-i18n'
 end
