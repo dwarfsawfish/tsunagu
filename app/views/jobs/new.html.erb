@@ -4,7 +4,7 @@
   <div class= "job_form_box">
     <div class= "job_registration_title">お仕事登録</div>
     <div class="new_job">
-      <%= form_with(model: @job, local: true) do |f| %>
+      <%= form_with(model: @job, local: true, id: "new_job") do |f| %>
         <%= render "shared/error_messages",  resource: @job %>
         
                 <div class="job_field">
@@ -130,8 +130,11 @@
                 </div>
 
                 <div class="job_field">
-                  <%= f.label :image, "画像" %><br />
-                  <%= f.file_field :image, id:"job_image" %>
+                  <div id="job_previews"></div>
+                  <div class="click-upload">
+                    <%= f.label :image, "画像" %><br />
+                    <%= f.file_field :image, id:"job_image" %>
+                  </div>
                 </div>
 
                 <div class="job_registration_button">
