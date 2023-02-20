@@ -17,7 +17,7 @@
             <div class="job_content">
               <%= link_to job_path(job.id) do %>
                 <div class="job_image_content">
-                  <%= image_tag job.image.variant(resize: '200x200'), class: "job_index_image" %>
+                  <%= image_tag job.images[0].variant(resize: '200x200'), class: "job_index_image" %>
               <% end %>
                 </div>
                 <div class="job_text">

@@ -14,7 +14,7 @@
       <div class="job_show_title">お仕事詳細</div>
       <div class="job_show_contents">
         <div class="job_show_top">
-          <%= image_tag @job.image, class: "job_image" %>
+          <%= image_tag @job.images[0], class: "job_image" %>
           <div class="job_show_right">
             <div class="job_show_right_title">
               <%= @job.company.company_name %> 代表者メッセージ<br />
@@ -49,6 +49,13 @@
             </div>  
             <% end %>
           </div>
+        </div>
+        <div class="other_images">
+          <% @job.images[1..-1].each do |image| %>
+            <div class="other_image">
+              <%= image_tag image %>
+            </div>
+          <% end %>
         </div>
         <div class="only_company_buttons">
           <% if company_signed_in? && current_company.id == @job.company_id %>
