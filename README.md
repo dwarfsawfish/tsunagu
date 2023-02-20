@@ -93,16 +93,15 @@ TSUNAGU（つなぐ）
 
 # 開発環境
 ・OS:13.1  
-・言語:HTML,CSS,Ruby,SQL
-・フレームワーク:Ruby on Rails
-・テスト:●
-・テキストエディタ:Visual Studio Code
-・タスク管理:github
+・言語:HTML,CSS,Ruby,SQL  
+・フレームワーク:Ruby on Rails  
+・テキストエディタ:Visual Studio Code  
+・タスク管理:github  
 
 <br />
 
 # ローカルでの動作方法
-以下のコマンドを順に実行。
+以下のコマンドを順に実行。  
 % git clone https://github.com/dwarfsawfish/tsunagu  
 % cd tsunagu  
 % bundle install  
