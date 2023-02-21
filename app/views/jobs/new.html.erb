@@ -133,7 +133,7 @@
                   <div id="job_previews"></div>
                   <div class="click-upload">
                     <%= f.label :image, "画像" %><br />
-                    <%= f.file_field :image, id:"job_image" %>
+                    <%= f.file_field :images, id:"job_image", name: 'job[images][]', data: {index: 0}  %>
                   </div>
                 </div>
 

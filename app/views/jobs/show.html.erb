@@ -57,6 +57,7 @@
             </div>
           <% end %>
         </div>
+        
         <div class="only_company_buttons">
           <% if company_signed_in? && current_company.id == @job.company_id %>
             <%= link_to '編集する', edit_job_path(@job.id), class: "job_edit_button" %>

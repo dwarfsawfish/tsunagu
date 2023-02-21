@@ -5,7 +5,7 @@ class Job < ApplicationRecord
   belongs_to :occupation
   belongs_to :status
   has_many :offers, dependent: :destroy
-  has_one_attached :image
+  has_many_attached :images
 
 
   validates :occupation_id,   numericality: { other_than: 1, message: "can't be blank" }
@@ -27,7 +27,7 @@ class Job < ApplicationRecord
     validates :benefit
     validates :benefit_supplement
     validates :emvironment
-    validates :image
+    validates :images, length: { minimum: 1, maximum: 5, message: "は1枚以上5枚以下にしてください" }
   end
 
   
