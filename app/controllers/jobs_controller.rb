@@ -45,7 +45,7 @@ class JobsController < ApplicationController
     params.require(:job).permit(:occupation_id, :status_id, :work, :training, :license, :age,
        :work_area, :salary, :trial_salary, :time, :holiday, :benefit_supplement,
        :qualification, :emvironment, :representative_message, :appeal,
-       :image).merge(benefit: params[:benefit], company_id: current_company.id)
+       {images: []}).merge(benefit: params[:benefit], company_id: current_company.id)
   end
 
   def if_not_company

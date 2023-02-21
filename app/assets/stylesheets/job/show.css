@@ -82,6 +82,15 @@
   border-radius: 10px;
 }
 
+.other_images{
+  display: flex;
+}
+
+.other-image{
+  margin-right: 10px;
+}
+
+
 /******投稿者専用ボタン*******/
 .only_company_buttons{
   margin: auto;
